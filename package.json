@@ -1,0 +1,52 @@
+{
+  "name": "copy-file-name-menu",
+  "displayName": "Copy File Name Menu",
+  "description": "Add context menu item to copy file name from tab",
+  "version": "0.0.1",
+  "icon": "resources/icon.png",
+  "publisher": "codelast",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codelast/copy-file-name-menu"
+  },
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copy-file-name-menu.copyFileName",
+        "title": "%copyFileName%"
+      }
+    ],
+    "menus": {
+      "editor/title/context": [
+        {
+          "command": "copy-file-name-menu.copyFileName",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.0",
+    "@types/node": "18.x",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
